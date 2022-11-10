@@ -71,10 +71,11 @@ class Registration extends Component {
   }
 
   onRegistration = event => {
-    event.preventDefault()
-    this.submitFirstName(event.target.firstname.value)
-    this.submitLastName(event.target.lastname.value)
     const {firstname, lastname} = this.state
+    event.preventDefault()
+    this.submitFirstName(firstname)
+    this.submitLastName(lastname)
+
     if (firstname !== '' && lastname !== '') {
       this.setState({
         hasSubmitted: true,
